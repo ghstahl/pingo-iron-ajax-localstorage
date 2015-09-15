@@ -9,7 +9,6 @@
         <iron-localstorage id="ironLocalStorageId" name={{localStorageKey}} value="{{_localStorageValue}}" on-iron-localstorage-load-empty="initializeDefaultValue"></iron-localstorage>
         <iron-ajax id="ironAjaxId" params="{{params}}" on-response="handleResponse" handle-as={{handleAs}} last-response="{{_ajaxResponse}}">
         </iron-ajax>
-
     </template>
 
     <script>
@@ -17,10 +16,10 @@
             Polymer({
                 is: 'pingo-iron-ajax-localstorage',
                 properties: {
-                    dataUrl: {
+                    url: {
                         type: String,
                         value: null,
-                        observer: '_dataUrlChanged'
+                        observer: '_urlChanged'
                     },
                     handleAs: {
                         type: String,
@@ -49,10 +48,10 @@
                 initializeDefaultValue: function (ev) {
                     this._localStorageValue = null
                 },
-                _dataUrlChanged: function (newValue, oldValue) {
+                _urlChanged: function (newValue, oldValue) {
                     if (newValue !== null) {
 
-                        this.$.ironAjaxId.url = this.dataUrl;
+                        this.$.ironAjaxId.url = this.url;
                         this.$.ironAjaxId.params = {
                             hash: "abcd123"
                         };
@@ -63,7 +62,7 @@
                         if (this._localStorageValue) {
                             this._setLastResponse(this._localStorageValue);
                         } else {
-                            this.$.ironAjaxId.url = this.dataUrl;
+                            this.$.ironAjaxId.url = this.url;
                             this.$.ironAjaxId.generateRequest();
                         }
                     }
@@ -81,9 +80,7 @@
                 },
                 handleResponse: function (request) {
                     console.log(" pingo-iron-ajax-localstorage response recieved");
-
                 }
-
             });
         })();
     </script>
