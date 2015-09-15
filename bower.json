@@ -1,6 +1,7 @@
 {
   "name": "pingo-iron-ajax-localstorage",
   "version": "0.0.1",
+  "main": "pingo-iron-ajax-localstorage.html",
   "authors": [
     "Herb Stahl"
   ],
