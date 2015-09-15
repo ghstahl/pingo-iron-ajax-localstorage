@@ -1,0 +1,26 @@
+{
+  "name": "pingo-iron-ajax-localstorage",
+  "version": "0.0.1",
+  "authors": [
+    "Herb Stahl"
+  ],
+  "description": "An element that encapsulates iron-ajax and iron-localstorage into one. Use ajax to fetch, then store in localstorage for later retrieval. Cache busting is up to you by what params you pass in.",
+  "keywords": [
+    "Polymer",
+    "web-components"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ghstahl/pingo-iron-ajax-localstorage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-ajax": "polymerelements/iron-ajax#~1.0.4",
+    "iron-localstorage": "polymerelements/iron-localstorage#~1.0.4",
+    "polymer": "~1.1.3"
+  }
+}
